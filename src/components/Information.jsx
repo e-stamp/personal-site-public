@@ -1,4 +1,9 @@
 /*
+ * This file contains various arrays of objects filled with information
+ * that is used to populate the resume.
+ */
+
+/*
  * Contains personal information for resume
  * is an array of two objects used to customize the information displayed on the resume
  * each object has the following properties:

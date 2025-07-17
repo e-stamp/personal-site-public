@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { personalInformation, skills, education, workExperience, projects  } from "../components/Information.jsx";
-import ExperienceFormat from '../components/resume/ExperienceFormat.jsx';
-import ProjectFormat from '../components/resume/ProjectFormat.jsx';
 
-
+/**
+ * Resume Page witch formats and dispalys resume information
+ * 
+ * @page Resume
+ * 
+ * @returns {JSX.Element} The rendered Resume page component.
+ * - Displays personal information, skills, education, work experience, and projects.
+ */
 export default function Resume() {
     const [nonRelevant, setNonRelevant] = useState(false);
     const [lived, setLived] = useState(true);
@@ -49,22 +54,46 @@ export default function Resume() {
             {/* Experience */}
             <h2 className="text-2xl font-bold mb-2">Experience</h2>
             {workExperience.filter(experience => experience.relevant).map((experience, index) => (
-                <ExperienceFormat key={index} experience={experience} />
+                <div className="experience mb-3">
+                    <h3 className="text-l font-bold mb-2">{experience.company} - {experience.title}</h3>
+                    <h5 className="opacity-65">{experience.date}, {experience.location}</h5>
+                    <p>{experience.description}</p>
+                </div>            
             ))}
             <button className="mb-3" onClick={() => setNonRelevant(!nonRelevant)}>
                 {nonRelevant ? "Collapse Non-Relevant Experience" : "Show Non-Relevant Experience"}
             </button>
             {nonRelevant && workExperience.filter(experience => !experience.relevant).map((experience, index) => (
-                <ExperienceFormat key={index} experience={experience} />
+                <div className="experience mb-3">
+                    <h3 className="text-l font-bold mb-2">{experience.company} - {experience.title}</h3>
+                    <h5 className="opacity-65">{experience.date}, {experience.location}</h5>
+                    <p>{experience.description}</p>
+                </div>
             ))}
             <h2>Projects</h2>
             <h3>Academic</h3>
             {projects.filter(project => project.type == "academic").filter(project => !project.hidden).map((project, index) => (
-                <ProjectFormat key={index} project={project} />
+                <div className="experience mb-3">
+                    <h3 className="text-l font-bold mb-2">{project.name}  {project.course ? project.course : ""}</h3>
+                    <h5 className="opacity-65">{project.date}</h5>
+                    <ul>
+                        {project.notes.map((note, index) => (
+                            <li key={index} className="bg-gray-500">{note}</li>
+                        ))}
+                    </ul>
+                </div>
             ))}
             <h3>Personal</h3>
             {projects.filter(project => project.type == "personal").filter(project => !project.hidden).map((project, index) => (
-                <ProjectFormat key={index} project={project} />
+                <div className="experience mb-3">
+                    <h3 className="text-l font-bold mb-2">{project.name}  {project.course ? project.course : ""}</h3>
+                    <h5 className="opacity-65">{project.date}</h5>
+                    <ul>
+                        {project.notes.map((note, index) => (
+                            <li key={index} className="bg-gray-500">{note}</li>
+                        ))}
+                    </ul>
+                </div>
             ))}
 
             {/* Additional Information */}
