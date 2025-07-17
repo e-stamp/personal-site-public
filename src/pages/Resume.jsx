@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { personalInformation, skills, education, workExperience, projects  } from "../components/Information.jsx";
+import { skills, education, workExperience, projects  } from "../components/Information.jsx";
+import useSharedInfoState from '../hooks/useSharedInfoState';
 
 /**
  * Resume Page witch formats and dispalys resume information
@@ -11,12 +12,7 @@ import { personalInformation, skills, education, workExperience, projects  } fro
  */
 export default function Resume() {
     const [nonRelevant, setNonRelevant] = useState(false);
-    const [lived, setLived] = useState(true);
-    const [info, setInfo] = useState(personalInformation[0]);
-
-    useEffect(() => {
-        setInfo(lived ? personalInformation[0] : personalInformation[1]);
-    }, [lived]);
+    const {info} = useSharedInfoState();
 
     return (
         <div>
@@ -24,7 +20,7 @@ export default function Resume() {
 
             {/* Name and Profile */}
             <h2 className="text-2xl font-bold mb-2">Profile</h2>
-            <h3 className="text-xl font-semibold mb-1">{info.first_name} {info.last_name}</h3>
+            <h3 className="text-xl font-semibold mb-1">{info.first_name} {info.last_name} ({info.pronouns})</h3>
             <p>{info.first_name} is a second year Computer Science student at {education[0].institution}, 
                 and {(info.pronouns == "She/Her") ? "she" : ""} is expected to graduate in 2027. 
                 Currently {(info.pronouns == "She/Her") ? "her" : "their"} focus is in software development, 
@@ -54,7 +50,7 @@ export default function Resume() {
             {/* Experience */}
             <h2 className="text-2xl font-bold mb-2">Experience</h2>
             {workExperience.filter(experience => experience.relevant).map((experience, index) => (
-                <div className="experience mb-3">
+                <div className="mb-3">
                     <h3 className="text-l font-bold mb-2">{experience.company} - {experience.title}</h3>
                     <h5 className="opacity-65">{experience.date}, {experience.location}</h5>
                     <p>{experience.description}</p>
@@ -64,7 +60,7 @@ export default function Resume() {
                 {nonRelevant ? "Collapse Non-Relevant Experience" : "Show Non-Relevant Experience"}
             </button>
             {nonRelevant && workExperience.filter(experience => !experience.relevant).map((experience, index) => (
-                <div className="experience mb-3">
+                <div className="mb-3">
                     <h3 className="text-l font-bold mb-2">{experience.company} - {experience.title}</h3>
                     <h5 className="opacity-65">{experience.date}, {experience.location}</h5>
                     <p>{experience.description}</p>
@@ -73,7 +69,7 @@ export default function Resume() {
             <h2>Projects</h2>
             <h3>Academic</h3>
             {projects.filter(project => project.type == "academic").filter(project => !project.hidden).map((project, index) => (
-                <div className="experience mb-3">
+                <div className="mb-3">
                     <h3 className="text-l font-bold mb-2">{project.name}  {project.course ? project.course : ""}</h3>
                     <h5 className="opacity-65">{project.date}</h5>
                     <ul>
@@ -85,7 +81,7 @@ export default function Resume() {
             ))}
             <h3>Personal</h3>
             {projects.filter(project => project.type == "personal").filter(project => !project.hidden).map((project, index) => (
-                <div className="experience mb-3">
+                <div className="mb-3">
                     <h3 className="text-l font-bold mb-2">{project.name}  {project.course ? project.course : ""}</h3>
                     <h5 className="opacity-65">{project.date}</h5>
                     <ul>

@@ -28,8 +28,8 @@ export const personalInformation = [
         phone: "902-999-7466",
         personal_email: "oastamp08@gmail.com",
         school_email: "OStamp@dal.ca",
-        github: <a href="https://github.com/ol-stamp">ol-stamp</a>,
-        linkedin: <a href="www.linkedin.com/in/oliver-stamp-87617232a">Oliver Stamp</a>
+        github: <a href="https://github.com/ol-stamp">github</a>,
+        linkedin: <a href="https://www.linkedin.com/in/oliver-stamp-87617232a">linkedin</a>
     },
     {
         version: "legal",
@@ -40,8 +40,8 @@ export const personalInformation = [
         phone: "902-999-7466",
         personal_email: "oastamp08@gmail.com",
         school_email: "OStamp@dal.ca",
-        github: <a href="https://github.com/ol-stamp">ol-stamp</a>,
-        linkedin: <a href="www.linkedin.com/in/oliver-stamp-87617232a">Oliver Stamp</a>
+        github: <a href="https://github.com/ol-stamp">github</a>,
+        linkedin: <a href="https://www.linkedin.com/in/oliver-stamp-87617232a">linkedin</a>
     }
 ];
 
@@ -193,16 +193,6 @@ export const projects = [
                 "Performed tests with the robot to account for variations in each robot."]
     },
     {
-        name: "2D Platformer Game",
-        date: "August 2022 - April 2023",
-        type: "personal",
-        hidden: false,
-        notes: ["Programed a short 2D platformer game in Java",
-                "Personally wrote all classes and methods for the game",
-                "Designed all in-game levels and optimized implementation",
-                "Created all in-game assets"]
-    },
-    {
         name: "Blindness Accessibility Work",
         date: "January 2025 - Current",
         type: "personal",
@@ -218,4 +208,15 @@ export const projects = [
                 "Applied colours and textures to the character for rendering",
                 "Rigged the character model"]
     },
+    {
+        name: "2D Platformer Game",
+        date: "August 2022 - April 2023",
+        type: "personal",
+        hidden: false,
+        notes: ["Programed a short 2D platformer game in Java",
+                "Personally wrote all classes and methods for the game",
+                "Designed all in-game levels and optimized implementation",
+                "Created all in-game assets"]
+    },
+    
 ]

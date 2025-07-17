@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { personalInformation } from './Information.jsx';
 
 export default function Layout({ children }) {
+    const [lived, setLived] = useState(true);
+    const [info, setInfo] = useState(personalInformation[0]);
+
+    useEffect(() => {
+        setInfo(lived ? personalInformation[0] : personalInformation[1]);
+    }, [lived]);
+    
     return (
         <div className="layout">
             <header>
@@ -10,7 +18,10 @@ export default function Layout({ children }) {
                 {children}
             </main>
             <footer>
-                <p>&copy; 2023 My Website</p>
+                <p>Contact</p>
+                <div>
+                    {info.phone}  --  {info.personal_email}  --  {info.school_email}  --  {info.linkedin}  --  {info.github}
+                </div>
             </footer>
         </div>
     );
