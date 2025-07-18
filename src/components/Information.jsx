@@ -57,7 +57,7 @@ export const skills = [
     "HTML",
     "JavaScript",
     "CSS",
-    "Tailwind CSS",
+    "TailwindCSS",
     "React",
     "Web Development",
 
