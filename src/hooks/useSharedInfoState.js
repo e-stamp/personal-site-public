@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { personalInformation } from '../components/Information.jsx';
 import api from '../services/index'
 
 export default function useSharedInfoState() {

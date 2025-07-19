@@ -15,19 +15,18 @@ export default function Resume() {
     const [nonRelevant, setNonRelevant] = useState(false);
     const [isLoading, setIsLoading] = useState(true)
     const {info, isInfoLoading} = useSharedInfoState();
-    let skills, education, workExperience, projects = [];
+    const [skills, setSkills] = useState(null);
+    const [education, setEducation] = useState(null);
+    const [workExperience, setWorkExperience] = useState(null);
+    const [projects, setProjects] = useState(null);
 
     const fetchResume = async () => {
         try {
             const data = await api.information.getResumeInfo();
-            skills = data[0];
-            education = data[1];
-            workExperience = data[2];
-            projects = data[3];
-            console.log(skills);
-            console.log(education);
-            console.log(workExperience);
-            console.log(projects);
+            setSkills(data[0]);
+            setEducation(data[1]);
+            setWorkExperience(data[3]);
+            setProjects(data[3]);
         } catch (err) {
             console.error("Error fetching resume");
         } finally {
