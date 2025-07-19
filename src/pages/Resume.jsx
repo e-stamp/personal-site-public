@@ -25,7 +25,7 @@ export default function Resume() {
             const data = await api.information.getResumeInfo();
             setSkills(data[0]);
             setEducation(data[1]);
-            setWorkExperience(data[3]);
+            setWorkExperience(data[2]);
             setProjects(data[3]);
         } catch (err) {
             console.error("Error fetching resume");
@@ -40,13 +40,11 @@ export default function Resume() {
 
     return (
         <div>
-            <h1>Resume page</h1>
 
             {/* Name and Profile */}
-            <h2 className="text-2xl font-bold mb-2">Profile</h2>
             {!isInfoLoading && !isLoading &&
                 <>
-                    <h3 className="text-xl font-semibold mb-1">{info.first_name} {info.last_name} ({info.pronouns})</h3>
+                    <h3 className="text-xl font-semibold mt-3 mb-1">{info.first_name} {info.last_name} ({info.pronouns})</h3>
                     <p>{info.first_name} is a third year Computer Science student at {education.institution}, 
                         and {(info.pronouns == "She/Her") ? "she" : ""} is expected to graduate in 2027. 
                         Currently {(info.pronouns == "She/Her") ? "she has" : "they have"} done work with software development, web development, database management, artificial intelligence, 
@@ -72,11 +70,13 @@ export default function Resume() {
                         <p className="opacity-65">{education[0].date}</p>
                         <p>Expected Graduation: {education[0].grad}</p>
                         <p>Next available for Co-op in: {education[0].next_available_for_coop}</p>
-                        <ul>
-                            {education[0].example_courses.map((course, index) => (
-                                <ol key={index}><span className="bg-gray-500">{course}, </span></ol>
-                            ))}
-                        </ul>
+                        <div className="flex flex-row items-center justify-center">
+                            <p>Courses: 
+                                {education[0].example_courses.map((course, index) => (
+                                    <span key={index}> {course},</span>
+                                ))}
+                            </p>
+                        </div>
                     </div>
 
                     {/* Experience */}
@@ -98,7 +98,7 @@ export default function Resume() {
                         {projects.filter(project => project.type == "academic").filter(project => !project.hidden).map((project, index) => (
                             <ProjectCard key={index} {...project} />
                         ))}
-                        <h3>Personal</h3>
+                        <h3 className="text-l font-bold mb-2">Personal</h3>
                         {projects.filter(project => project.type == "personal").filter(project => !project.hidden).map((project, index) => (
                             <ProjectCard key={index} {...project} />
                         ))}

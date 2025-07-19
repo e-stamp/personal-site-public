@@ -16,7 +16,7 @@ export default function Layout({ children }) {
             <footer>
                 <p>Contact</p>
                 <div>
-                    {!isInfoLoading && <>{info.phone}  --  {info.personal_email}  --  {info.school_email}  --  {info.linkedin}  --  {info.github}</>}
+                    {!isInfoLoading && <>{info.phone}  --  {info.personal_email}  --  {info.school_email}  --  <a href={info.linkedin}>LinkedIn</a>  --  <a href={info.github}>GitHub</a></>}
                 </div>
             </footer>
         </div>
