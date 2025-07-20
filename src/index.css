@@ -33,13 +33,13 @@
   color-scheme: light dark;
   color: var(--fern);
   background-color: var(--deepwood);
-  background-image: url("ivy_vine.png"), url("ivy_vine_mirror.png");
+  background-image: url("ivy_vine.png"), url("ivy_vine_mirror.png"), radial-gradient(circle, transparent 70%, rgb(0, 0, 0, 0.5));
   background-repeat: no-repeat, no-repeat;
   background-position-x: 4%, 96%;
   background-position-y: 50%, 50%;
-  background-size: 350px 900px, 350px 900px;
+  background-size: 350px 900px, 350px 900px, contain;
   background-attachment: fixed;
-  background-blend-mode: multiply;
+  background-blend-mode: multiply, multiply, normal;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -92,6 +92,10 @@ button:focus-visible {
 
 @media only screen and (max-width: 1000px) {
   :root {
-    background-image: none !important;
+    background-image: radial-gradient(circle, transparent 70%, rgb(0, 0, 0, 0.5)) !important;
+    background-position: auto;
+    background-size: contain;
+    background-attachment: fixed;
+    background-blend-mode: normal;
   }
 }
