@@ -7,11 +7,11 @@ const apiClient = createApiClient();
 const api = {
 
     information: {
-        async getInfoVersion() {
+        async getInfo() {
             try {
-                const response = await apiClient.get('/api/get_info_versions');
+                const response = await apiClient.get('/api/get_info');
                 
-                if (response.status != 200) {throw new Error('No info versions recieved')}
+                if (response.status != 200) {throw new Error('No info recieved')}
                 return response.data
             } catch (error) {
                 console.error(error);

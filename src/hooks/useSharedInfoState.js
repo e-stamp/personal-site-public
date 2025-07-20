@@ -7,7 +7,7 @@ export default function useSharedInfoState() {
 
     const fetchInfo = async () => {
         try {
-            const data = await api.information.getInfoVersion();
+            const data = await api.information.getInfo();
             setInfo(data[0]);
         } catch (err) {
             console.error("Error fetching info");
