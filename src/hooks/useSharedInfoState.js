@@ -2,15 +2,13 @@ import { useState, useEffect } from 'react';
 import api from '../services/index'
 
 export default function useSharedInfoState() {
-    const [lived, setLived] = useState(true);
     const [info, setInfo] = useState(null);
     const [isInfoLoading, setIsInfoLoading] = useState(!info);
-    let infoVersions = []
 
     const fetchInfo = async () => {
         try {
-            infoVersions = await api.information.getInfoVersion();
-            setInfo(infoVersions[0]);
+            const data = await api.information.getInfoVersion();
+            setInfo(data[0]);
         } catch (err) {
             console.error("Error fetching info");
         } finally {
@@ -19,14 +17,12 @@ export default function useSharedInfoState() {
     }
 
     useEffect(() => {
-        if (infoVersions = []) {
+        if (!info) {
             fetchInfo();
         }
     }, [])
 
-    useEffect(() => {
-        setInfo(lived ? infoVersions[0] : infoVersions[1]);
-    }, [lived]);
+    
 
-    return { lived, setLived, info, isInfoLoading };
+    return { info, isInfoLoading };
 }
