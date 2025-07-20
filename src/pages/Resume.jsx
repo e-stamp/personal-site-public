@@ -44,8 +44,8 @@ export default function Resume() {
             {/* Name and Profile */}
             {!isInfoLoading && !isLoading &&
                 <>
-                    <h3 className="text-xl font-semibold mt-3 mb-1">{info.first_name} {info.last_name} ({info.pronouns})</h3>
-                    <p>{info.first_name} is a third year Computer Science student at {education.institution}, 
+                    <h3 className="text-2xl font-semibold mt-3 mb-1">{info.first_name} {info.last_name} ({info.pronouns})</h3>
+                    <p>{info.first_name} is a third year Computer Science student at <strong>{education[0].institution}</strong>, 
                         and {(info.pronouns == "She/Her") ? "she" : ""} is expected to graduate in 2027. 
                         Currently {(info.pronouns == "She/Her") ? "she has" : "they have"} done work with software development, web development, database management, artificial intelligence, 
                         and 3D modeling. {(info.pronouns == "She/Her") ? "She has" : "They have"} knowledge on software project work as a team, 
@@ -66,16 +66,19 @@ export default function Resume() {
                     {/* Education */}
                     <div className="p-3 mb-6 rounded-2xl bg-canopy">
                         <h2 className="text-2xl font-bold mb-2">Education</h2>
-                        <p className="text-l"><strong>{education[0].institution}</strong>, {education[0].location}, {education[0].degree}</p>
-                        <p className="opacity-65">{education[0].date}</p>
-                        <p>Expected Graduation: {education[0].grad}</p>
-                        <p>Next available for Co-op in: {education[0].next_available_for_coop}</p>
-                        <div className="flex flex-row items-center justify-center">
-                            <p>Courses: 
-                                {education[0].example_courses.map((course, index) => (
-                                    <span key={index}> {course},</span>
-                                ))}
-                            </p>
+                        <div className="p-2 rounded-2xl bg-moss mb-3">
+                            <p className="text-lg"><strong>{education[0].institution}</strong>, {education[0].location}</p>
+                            <p>{education[0].degree}</p>
+                            <p className="opacity-65">{education[0].date}</p>
+                            <p>Expected Graduation: <strong>{education[0].grad}</strong></p>
+                            <p>Next available for Co-op in: <strong>{education[0].next_available_for_coop}</strong></p>
+                            <div className="flex flex-row items-center justify-center">
+                                <p>Courses: 
+                                    {education[0].example_courses.map((course, index) => (
+                                        <span key={index}> {course},</span>
+                                    ))}
+                                </p>
+                            </div>
                         </div>
                     </div>
 

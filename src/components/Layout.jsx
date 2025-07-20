@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     
     
     return (
-        <div className="layout max-w-4xl">
+        <div className="layout min-w-2xl max-w-4xl">
             <header className="p-3 rounded-2xl bg-canopy">
                 <NavBar />
             </header>
