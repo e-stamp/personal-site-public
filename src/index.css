@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-dark-brown: oklch(0.1644 0.0106 52.68);
   --color-timber: oklch(0.3257 0.0615 55.51);
   --color-forest-floor: oklch(0.4821 0.0739 52.93);
   --color-earthy: oklch(0.6675 0.0927 66.71);
@@ -9,10 +10,12 @@
   --color-moss: oklch(0.5139 0.047 116.99);
   --color-deep-green: oklch(0.3151 0.0458 127.53);
   --color-deepwood: oklch(0.3239 0.0157 117.46);
+  --color-dark-green: oklch(0.2036 0.0693 142.5);
 }
 
 :root {
   /* Colour scheme variables */
+  --dark-brown: #120d0a;
   --timber: #4c2b12;
   --forest-floor: #7f5235;
   --earthy: #bb8954;
@@ -21,6 +24,7 @@
   --moss: #656b4c;
   --deep-green: #2b361c;
   --deepwood: #33352c;
+  --dark-green: #001e00;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -29,6 +33,9 @@
   color-scheme: light dark;
   color: var(--fern);
   background-color: var(--deepwood);
+  background-image: url("leaves.png");
+  background-blend-mode: multiply;
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
