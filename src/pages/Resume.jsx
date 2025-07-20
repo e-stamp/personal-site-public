@@ -80,7 +80,7 @@ export default function Resume() {
                                     bg-[url(/leaf_vein.png)] bg-blend-soft-light"
                     >
                         <h2 className="text-2xl font-bold mb-2">Education</h2>
-                        <div className="p-2 rounded-2xl bg-moss mb-3">
+                        <div className="droplet p-2 mb-3">
                             <p className="text-lg"><strong>{education[0].institution}</strong>, {education[0].location}</p>
                             <p>{education[0].degree}</p>
                             <p className="opacity-65">{education[0].date}</p>
