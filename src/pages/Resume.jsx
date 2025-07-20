@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ExperienceCard, ProjectCard } from '../components/resume/ResumeCards.jsx';
+import { ExperienceCard, ProjectCard, AwardCard } from '../components/resume/ResumeCards.jsx';
 import useSharedInfoState from '../hooks/useSharedInfoState';
 import api from '../services/index';
 
@@ -19,6 +19,7 @@ export default function Resume() {
     const [education, setEducation] = useState(null);
     const [workExperience, setWorkExperience] = useState(null);
     const [projects, setProjects] = useState(null);
+    const [awards, setAwards] = useState(null);
 
     const fetchResume = async () => {
         try {
@@ -27,6 +28,7 @@ export default function Resume() {
             setEducation(data[1]);
             setWorkExperience(data[2]);
             setProjects(data[3]);
+            setAwards(data[4]);
         } catch (err) {
             console.error("Error fetching resume");
         } finally {
@@ -128,6 +130,16 @@ export default function Resume() {
                     </div>
 
                     {/* Additional Information */}
+                    <div className="p-3 mb-6 rounded-2xl bg-canopy
+                                    shadow-lg shadow-dark-green text-shadow-sm text-shadow-timber 
+                                    border-b-3 border-r-2 border-deep-green 
+                                    bg-[url(/leaf_vein.png)] bg-blend-soft-light"
+                    >
+                        <h2 className="text-2xl font-bold mb-2">Awards</h2>
+                        {awards.map((award, index) => (
+                            <AwardCard key={index} {...award} />
+                        ))}
+                    </div>
                 </>
             }
         </div>
