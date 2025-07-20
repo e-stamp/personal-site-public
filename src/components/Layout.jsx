@@ -9,20 +9,14 @@ export default function Layout({ children }) {
     
     return (
         <div className="layout min-w-2xl max-w-4xl">
-            <header className="p-3 rounded-2xl bg-canopy 
-                               shadow-md shadow-dark-green text-shadow-sm text-shadow-timber 
-                               border-b-2 border-r-1 border-deep-green 
-                               bg-[url(/leaf_vein.png)] bg-blend-soft-light bg-center"
+            <header className="leaf p-3 bg-center"
             >
                 <NavBar />
             </header>
             <main>
                 {children}
             </main>
-            <footer className="p-3 rounded-2xl bg-canopy
-                               shadow-md shadow-dark-green text-shadow-sm text-shadow-timber 
-                               border-b-2 border-r-1 border-deep-green 
-                               bg-[url(/leaf_vein.png)] bg-blend-soft-light bg-center"
+            <footer className="leaf p-3 bg-center"
             >
                 <h2 className="text-2xl mb-2">Contact</h2>
                 <div>

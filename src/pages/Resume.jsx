@@ -63,10 +63,7 @@ export default function Resume() {
                         {skills.map((skill, index) => (
                             <span 
                                 key={index} 
-                                className="shrink-0 rounded-2xl bg-canopy p-3 
-                                           shadow-md shadow-dark-green text-shadow-sm text-shadow-timber 
-                                           border-b-2 border-r-1 border-deep-green 
-                                           bg-[url(/leaf_vein.png)] bg-blend-soft-light"
+                                className="leaf p-3 shrink-0 !shadow-lg shadow-dark-green"
                             >
                                 {skill}
                             </span>
@@ -74,11 +71,7 @@ export default function Resume() {
                     </div>
 
                     {/* Education */}
-                    <div className="p-3 mb-6 rounded-2xl bg-canopy
-                                    shadow-lg shadow-dark-green text-shadow-sm text-shadow-timber 
-                                    border-b-3 border-r-2 border-deep-green 
-                                    bg-[url(/leaf_vein.png)] bg-blend-soft-light"
-                    >
+                    <div className="leaf p-3 mb-6">
                         <h2 className="text-2xl font-bold mb-2">Education</h2>
                         <div className="droplet p-2 mb-3">
                             <p className="text-lg"><strong>{education[0].institution}</strong>, {education[0].location}</p>
@@ -97,10 +90,7 @@ export default function Resume() {
                     </div>
 
                     {/* Experience */}
-                    <div className="p-3 mb-6 rounded-2xl bg-canopy
-                                    shadow-lg shadow-dark-green text-shadow-sm text-shadow-timber 
-                                    border-b-3 border-r-2 border-deep-green 
-                                    bg-[url(/leaf_vein.png)] bg-blend-soft-light"
+                    <div className="leaf p-3 mb-6"
                     >
                         <h2 className="text-2xl font-bold mb-2">Experience</h2>
                         {workExperience.filter(experience => experience.relevant).map((experience, index) => (
@@ -113,10 +103,7 @@ export default function Resume() {
                             <ExperienceCard key={index} {...experience} />
                         ))}
                     </div>
-                    <div className="p-3 mb-6 rounded-2xl bg-canopy
-                                    shadow-lg shadow-dark-green text-shadow-sm text-shadow-timber 
-                                    border-b-3 border-r-2 border-deep-green 
-                                    bg-[url(/leaf_vein.png)] bg-blend-soft-light"
+                    <div className="leaf p-3 mb-6"
                     >
                         <h2 className="text-2xl font-bold mb-2">Projects</h2>
                         <h3 className="text-l font-bold mb-2">Academic</h3>
@@ -130,10 +117,7 @@ export default function Resume() {
                     </div>
 
                     {/* Additional Information */}
-                    <div className="p-3 mb-6 rounded-2xl bg-canopy
-                                    shadow-lg shadow-dark-green text-shadow-sm text-shadow-timber 
-                                    border-b-3 border-r-2 border-deep-green 
-                                    bg-[url(/leaf_vein.png)] bg-blend-soft-light"
+                    <div className="leaf p-3 mb-6"
                     >
                         <h2 className="text-2xl font-bold mb-2">Awards</h2>
                         {awards.map((award, index) => (
