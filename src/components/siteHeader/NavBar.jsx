@@ -38,7 +38,7 @@ export default function NavBar() {
                     onClick={() => (navigate('/'))}
                     role="menuitem"
                 >
-                    Hub
+                    About
                 </button>
 
                 {/* Resume button */}
@@ -49,6 +49,16 @@ export default function NavBar() {
                     role="menuitem"
                 >
                     Resume
+                </button>
+
+                {/* Projects button */}
+                <button
+                    className={getNavButtonClass('/projects')}
+                    style={{ background: 'transparent' }}
+                    onClick={() => (navigate('/projects'))}
+                    role="menuitem"
+                >
+                    Projects
                 </button>
             </div>
         </nav>
