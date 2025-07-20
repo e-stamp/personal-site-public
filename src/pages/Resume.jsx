@@ -105,7 +105,7 @@ export default function Resume() {
                             <ExperienceCard key={index} {...experience} />           
                         ))}
                         <button className="mb-3" onClick={() => setNonRelevant(!nonRelevant)}>
-                            {nonRelevant ? "Collapse Non-Relevant Experience" : "Show Non-Relevant Experience"}
+                            {nonRelevant ? "Collapse Other Work Experience" : "Show Other Work Experience"}
                         </button>
                         {nonRelevant && workExperience.filter(experience => !experience.relevant).map((experience, index) => (
                             <ExperienceCard key={index} {...experience} />

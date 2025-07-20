@@ -82,23 +82,12 @@ button {
 }
 button:hover {
   border-color: var(--earthy);
+  color: var(--fern);
+  background-color: var(--timber);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 @media only screen and (max-width: 1000px) {
