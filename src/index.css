@@ -33,9 +33,13 @@
   color-scheme: light dark;
   color: var(--fern);
   background-color: var(--deepwood);
-  background-image: url("leaves.png");
+  background-image: url("ivy_vine.png"), url("ivy_vine_mirror.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position-x: 4%, 96%;
+  background-position-y: 50%, 50%;
+  background-size: 350px 900px, 350px 900px;
+  background-attachment: fixed;
   background-blend-mode: multiply;
-  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -94,5 +98,11 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  :root {
+    background-image: none !important;
   }
 }
