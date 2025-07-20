@@ -57,14 +57,14 @@ export default function Resume() {
             {!isLoading &&
                 <>
                     {/* Skills */}
-                    <div className="mb-6 flex flex-row gap-4 items-center justify-center">
+                    <div className="mt-4 mb-6 flex flex-row flex-wrap gap-4 items-center justify-center">
                         {skills.map((skill, index) => (
-                            <span key={index} className="rounded-2xl bg-gray-500 p-3">{skill}</span>
+                            <span key={index} className="shrink-0 rounded-2xl bg-canopy p-3">{skill}</span>
                         ))}
                     </div>
 
                     {/* Education */}
-                        <div className="mb-6 rounded-2xl bg-gray-500">
+                    <div className="p-3 mb-6 rounded-2xl bg-canopy">
                         <h2 className="text-2xl font-bold mb-2">Education</h2>
                         <p className="text-l"><strong>{education[0].institution}</strong>, {education[0].location}, {education[0].degree}</p>
                         <p className="opacity-65">{education[0].date}</p>
@@ -80,7 +80,7 @@ export default function Resume() {
                     </div>
 
                     {/* Experience */}
-                    <div className="mb-6 rounded-2xl bg-gray-500">
+                    <div className="p-3 mb-6 rounded-2xl bg-canopy">
                         <h2 className="text-2xl font-bold mb-2">Experience</h2>
                         {workExperience.filter(experience => experience.relevant).map((experience, index) => (
                             <ExperienceCard key={index} {...experience} />           
@@ -92,7 +92,7 @@ export default function Resume() {
                             <ExperienceCard key={index} {...experience} />
                         ))}
                     </div>
-                    <div className="mb-6 rounded-2xl bg-gray-500">
+                    <div className="p-3 mb-6 rounded-2xl bg-canopy">
                         <h2 className="text-2xl font-bold mb-2">Projects</h2>
                         <h3 className="text-l font-bold mb-2">Academic</h3>
                         {projects.filter(project => project.type == "academic").filter(project => !project.hidden).map((project, index) => (
