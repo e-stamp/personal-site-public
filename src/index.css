@@ -49,11 +49,11 @@
 
 a {
   font-weight: 500;
-  color: var(--color-pink-400);
+  color: var(--color-pink-300);
   text-decoration: inherit;
 }
 a:hover {
-  color: var(--color-red-400);
+  color: var(--color-pink-400);
 }
 
 body {
