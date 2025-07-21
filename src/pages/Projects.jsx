@@ -47,7 +47,7 @@ export default function Projects() {
             {!isLoading &&
                 <>
                     {/* Projects */}
-                    <div className="p-3 mb-6 mt-6">
+                    <div className="p-3 mb-6">
                         <h2 className="text-2xl font-bold mb-2">Projects</h2>
 
                         {/* Personal Projects */}

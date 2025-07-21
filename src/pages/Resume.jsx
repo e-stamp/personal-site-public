@@ -45,7 +45,8 @@ export default function Resume() {
 
             {/* Name and Profile */}
             {!isInfoLoading && !isLoading &&
-                <>
+                <div className="p-3 mb-6">
+                    <h2 className="text-2xl font-bold mb-2">Resume</h2>
                     <h3 className="text-2xl font-semibold mt-3 mb-1">{info.first_name} {info.last_name} ({info.pronouns})</h3>
                     <p>{info.first_name} is a third year Computer Science student at <strong>{education[0].institution}</strong>, 
                         and {(info.pronouns == "She/Her") ? "she" : ""} is expected to graduate in 2027. 
@@ -53,7 +54,7 @@ export default function Resume() {
                         and 3D modeling. {(info.pronouns == "She/Her") ? "She has" : "They have"} knowledge on software project work as a team, 
                         the software development lifecycle, and the Scrum process.
                     </p>
-                </>
+                </div>
             }
             
             {!isLoading &&
