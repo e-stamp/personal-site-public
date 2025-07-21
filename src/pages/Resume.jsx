@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ExperienceCard, ProjectCard, AwardCard } from '../components/resume/ResumeCards.jsx';
+import { ExperienceCard, ProjectCardPreview, AwardCard } from '../components/resume/ResumeCards.jsx';
 import useSharedInfoState from '../hooks/useSharedInfoState';
 import api from '../services/index';
 
@@ -108,11 +108,11 @@ export default function Resume() {
                         <h2 className="text-2xl font-bold mb-2">Projects</h2>
                         <h3 className="text-l font-bold mb-2">Academic</h3>
                         {projects.filter(project => project.type == "academic").filter(project => !project.hidden).map((project, index) => (
-                            <ProjectCard key={index} {...project} />
+                            <ProjectCardPreview key={index} {...project} />
                         ))}
                         <h3 className="text-l font-bold mb-2">Personal</h3>
                         {projects.filter(project => project.type == "personal").filter(project => !project.hidden).map((project, index) => (
-                            <ProjectCard key={index} {...project} />
+                            <ProjectCardPreview key={index} {...project} />
                         ))}
                     </div>
 

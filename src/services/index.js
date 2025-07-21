@@ -28,6 +28,18 @@ const api = {
                 console.error(error);
             }
             
+        },
+        
+        async getProjectInfo() {
+            try {
+                const response = await apiClient.get('/api/get_projects');
+                
+                if (response.status != 200) {throw new Error('No project data recieved')}
+                return response.data;
+            } catch (error) {
+                console.error(error);
+            }
+            
         }
     }
 }
