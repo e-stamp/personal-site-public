@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ProjectCardFull } from '../components/projects/projectsCards.jsx';
 import api from '../services/index';
 
@@ -15,8 +15,10 @@ import api from '../services/index';
  *   - notes / a description on the project
  */
 export default function Projects() {
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
     const [projects, setProjects] = useState(null);
+    const scrollToRef = useRef(null);
+    const scrollToProject = localStorage.getItem('selectedProject') || null;
 
     const fetchProjects = async () => {
         try {
@@ -33,6 +35,13 @@ export default function Projects() {
         fetchProjects();
     }, [])
 
+    useEffect(() => {
+        if (scrollToRef.current) {
+            scrollToRef.current.scrollIntoView();
+            localStorage.removeItem('selectedProject');
+        }
+    }, [isLoading])
+
     return (
         <div>
             {!isLoading &&
@@ -44,13 +53,23 @@ export default function Projects() {
                         {/* Personal Projects */}
                         <h3 className="text-l font-bold mb-2">Personal</h3>
                         {projects.filter(project => project.type == "personal").filter(project => !project.hidden).map((project, index) => (
-                            <ProjectCardFull key={index} {...project} />
+                            <div 
+                                ref={JSON.stringify(project.name) === scrollToProject ? scrollToRef : null } 
+                                key={index}
+                            >
+                                <ProjectCardFull {...project} />
+                            </div>
                         ))}
 
                         {/* Academic Projects */}
                         <h3 className="text-l font-bold mb-2">Academic</h3>
                         {projects.filter(project => project.type == "academic").filter(project => !project.hidden).map((project, index) => (
-                            <ProjectCardFull key={index} {...project} />
+                            <div 
+                                ref={JSON.stringify(project.name) === scrollToProject ? scrollToRef : null } 
+                                key={index}
+                            >
+                                <ProjectCardFull {...project} />
+                            </div>
                         ))}
                         
                     </div>
