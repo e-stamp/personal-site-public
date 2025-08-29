@@ -76,7 +76,6 @@ const projects = [
         "summary": "Fully programmed this personal website using React, Vite, and Flask.",
         "notes": ["Created the frontend of the website using React and Vite",
                   "Added styling to the website through a combination of standard CSS and TailwindCSS",
-                  "Created a backend using Flask to potentially expand functionality in the future",
                   "Future Plans to add an interactive game to provide an alternate experience when viewing the site"]
     },
     {
