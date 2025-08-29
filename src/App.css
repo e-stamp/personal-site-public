@@ -21,11 +21,18 @@
 }
 
 .droplet {
-  padding: 3px;
-  backdrop-filter: blur(2px);
+  padding: 5px;
+  padding-left: 13px;
+  padding-right: 13px;
+  backdrop-filter: blur(3px);
   background-image: radial-gradient( transparent 30%, rgba(102, 212, 249, 0.3));
   border-radius: 37px;
   box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4), 2px 2px 2px rgba(255, 255, 255, 0.4) inset;
+  transition: box-shadow 300ms;
+}
+
+.droplet:hover {
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.8), 2px 2px 2px rgba(255, 255, 255, 0.8) inset;
 }
 
 .profile {

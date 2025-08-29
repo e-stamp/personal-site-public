@@ -97,15 +97,15 @@ export default function Resume() {
                         {workExperience.filter(experience => experience.relevant).map((experience, index) => (
                             <ExperienceCard key={index} {...experience} />           
                         ))}
-                        <button className="mb-3" onClick={() => setNonRelevant(!nonRelevant)}>
+                        <button className="mb-3 " onClick={() => setNonRelevant(!nonRelevant)}>
                             {nonRelevant ? "Collapse Other Work Experience" : "Show Other Work Experience"}
                         </button>
                         {nonRelevant && workExperience.filter(experience => !experience.relevant).map((experience, index) => (
                             <ExperienceCard key={index} {...experience} />
                         ))}
                     </div>
-                    <div className="leaf p-3 mb-6"
-                    >
+                    
+                    <div className="leaf p-3 mb-6">
                         <h2 className="text-2xl font-bold mb-2">Projects</h2>
                         <h3 className="text-l font-bold mb-2">Academic</h3>
                         {projects.filter(project => project.type == "academic").filter(project => !project.hidden).map((project, index) => (
