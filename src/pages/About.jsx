@@ -17,22 +17,20 @@ export default function About() {
         <div>
             {!isInfoLoading &&
                 <>
-                    {/* Projects */}
+                    {/* About page */}
                     <div className="p-3 mb-6">
                         <h2 className="text-2xl font-bold mb-2">About</h2>
 
-                        <div className="leaf p-3 mb-6">
-                            {/* inset image placeholder underneath the droplet class */}
+                        <div className="leaf p-3 mb-6 flex flex-col items-center justify-center">
+                            <div className="profile w-[600px] h-[600px]"></div>
                             <h3 className="text-2xl font-semibold mt-3">{info.first_name} {info.last_name}</h3>
                             <h4 className="text-xl mb-1">({info.pronouns})</h4>
-                        </div>
+                            
+                            {/* introduction (elevator pitch) */}
+                            <div className="droplet p-3 mt-3 mb-3">
 
-                        {/* introduction (elevator pitch) */}
-                        {/* what I do */}
-                        {/* what I work on */}
-                        {/* currently interested in */}
-                        {/* hobbies */}
-                        
+                            </div>
+                        </div>
                     </div>
                 </>
             }

@@ -8,7 +8,7 @@ export default function Layout({ children }) {
     
     
     return (
-        <div className="layout min-w-2xl max-w-4xl">
+        <div className="layout min-w-2xl max-w-4xl flex flex-col">
             <header className="leaf p-3 bg-center"
             >
                 <NavBar />
