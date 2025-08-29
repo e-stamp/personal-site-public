@@ -24,11 +24,12 @@ export default function Resume() {
     const fetchResume = async () => {
         try {
             const data = await api.information.getResumeInfo();
-            setSkills(data[0]);
-            setEducation(data[1]);
-            setWorkExperience(data[2]);
-            setProjects(data[3]);
-            setAwards(data[4]);
+            console.log(data.education);
+            setSkills(data.skills);
+            setEducation(data.education);
+            setWorkExperience(data.work_experience);
+            setProjects(data.projects);
+            setAwards(data.awards);
         } catch (err) {
             console.error("Error fetching resume");
         } finally {

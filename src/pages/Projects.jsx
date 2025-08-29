@@ -37,7 +37,7 @@ export default function Projects() {
 
     useEffect(() => {
         if (scrollToRef.current) {
-            scrollToRef.current.scrollIntoView();
+            scrollToRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
             localStorage.removeItem('selectedProject');
         }
     }, [isLoading])
