@@ -22,13 +22,16 @@ export default function About() {
                         <h2 className="text-2xl font-bold mb-2">About</h2>
 
                         <div className="leaf p-3 mb-6 flex flex-col items-center justify-center">
-                            <div className="profile w-[600px] h-[600px]"></div>
-                            <h3 className="text-2xl font-semibold mt-3">{info.first_name} {info.last_name}</h3>
-                            <h4 className="text-xl mb-1">({info.pronouns})</h4>
+                            <div className="profile mt-5 w-[600px] h-[600px]"></div>
+                            <h3 className="text-2xl font-semibold mt-5">{info.first_name} {info.last_name}</h3>
+                            <h4 className="text-xl ">({info.pronouns})</h4>
                             
                             {/* introduction (elevator pitch) */}
-                            <div className="droplet p-3 mt-3 mb-3">
-
+                            <div className="p-3 mb-3 text-lg">
+                                <p>Hi, I'm Eva, a third year computer science student currently studying at Dalhousie University.
+                                    I'm passionate about software development and have experience in full-stack development, cloud computing, and database management.
+                                    I'm currently looking for a winter 2025/2026 co-op position to continue to gain more experience in the field.
+                                </p>
                             </div>
                         </div>
                     </div>
