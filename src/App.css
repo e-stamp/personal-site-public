@@ -10,7 +10,7 @@
 
 .leaf {
   background-color: var(--canopy);
-  background-image: url('leaf_vein.png'), radial-gradient(var(--moss) 30%, var(--canopy));
+  background-image: url('/public/leaf_vein.png'), radial-gradient(var(--moss) 30%, var(--canopy));
   background-blend-mode: soft-light, normal;
   border-color: var(--deep-green) !important;
   border-radius: 16px;
@@ -36,7 +36,7 @@
 }
 
 .profile {
-  background-image: radial-gradient( transparent 30%, rgba(102, 212, 249, 0.3)), url('Portrait_Placeholder.png');
+  background-image: radial-gradient( transparent 30%, rgba(102, 212, 249, 0.3)), url('/public/Portrait_Placeholder.png');
   border-radius: 100%;
   box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.4), 4px 4px 2px rgba(255, 255, 255, 0.4) inset;
 }
