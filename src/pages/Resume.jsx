@@ -24,7 +24,6 @@ export default function Resume() {
     const fetchResume = async () => {
         try {
             const data = await api.information.getResumeInfo();
-            console.log(data.education);
             setSkills(data.skills);
             setEducation(data.education);
             setWorkExperience(data.work_experience);
