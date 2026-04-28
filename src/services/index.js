@@ -27,6 +27,7 @@ const skills = [
         "SQL",
         "Git",
         "Testing",
+        "Modeling",
         "Blender",
         "Agile methodologies",
         "Video Editing"
@@ -42,6 +43,14 @@ const education = [{
         "next_available_for_coop": "Winter, January 2026"
     }]
 const work_experience = [
+        {
+            "title": "Software Developer (Co-op)",
+            "company": "Lockheed Martin",
+            "location": "Dartmouth, NS",
+            "date": "January 2026 - April 2026",
+            "description": "Designed software models for code both yet to be implemented and already written and wrote program code to add features and fix issues according to agile stories as part of a larger, ongoing software project",
+            "relevant": true 
+        },
         {
             "title": "Associate Intern (Software Development Co-op)",
             "company": "Cognizant",
@@ -116,7 +125,7 @@ const projects = [
     },
     {
         "name": "Blindness Accessibility Work",
-        "date": "January 2025 - Current",
+        "date": "January 2025 - December 2025",
         "type": "personal",
         "hidden": false,
         "summary": "Used Blender to update existing 3D models designed to make neuroscience more accessible to the visually impaired",
@@ -126,7 +135,7 @@ const projects = [
     },
     {
         "name": "3D Modeling",
-        "date": "January 2025 - Current",
+        "date": "January 2025 - December 2025",
         "type": "personal",
         "hidden": false,
         "summary": "Used Blender to create and edit 3D models",
