@@ -51,7 +51,7 @@ export default function Resume() {
                     <p>{info.first_name} is a third year Computer Science student at <strong>{education[0].institution}</strong>, 
                         and {(info.pronouns == "She/Her") ? "she" : ""} is expected to graduate in 2027. 
                         Currently {(info.pronouns == "She/Her") ? "she has" : "they have"} done work with software development, web development, database management, artificial intelligence, 
-                        and 3D modeling. {(info.pronouns == "She/Her") ? "She has" : "They have"} knowledge on software project work as a team, 
+                        and various types of modeling. {(info.pronouns == "She/Her") ? "She has" : "They have"} knowledge on software project work as a team, 
                         the software development lifecycle, and the Scrum process.
                     </p>
                 </div>
