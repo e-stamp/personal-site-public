@@ -30,7 +30,7 @@ export default function About() {
                             <div className="p-3 mb-3 text-lg">
                                 <p>Hi, I'm Eva, a third year computer science student currently studying at Dalhousie University.
                                     I'm passionate about software development and have experience in full-stack development, cloud computing, and database management.
-                                    I'm currently looking for a winter 2025/2026 co-op position to continue to gain more experience in the field.
+                                    I'm currently looking for a fall 2026/2027 co-op position to continue to gain more experience in the field.
                                 </p>
                             </div>
                         </div>
