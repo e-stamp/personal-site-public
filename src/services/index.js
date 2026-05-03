@@ -40,7 +40,7 @@ const education = [{
         "date": "September 2022 - Present",
         "grad": "2027",
         "example_courses": ["Experimental Robotics", "Web Design and Development", "Theory of Computer Science", "Practical Data Science", "Software_Development"],
-        "next_available_for_coop": "Winter, January 2026"
+        "next_available_for_coop": "Fall, September 2026"
     }]
 const work_experience = [
         {
