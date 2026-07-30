@@ -20,6 +20,8 @@ const skills = [
         "Python",
         "C",
         "Java",
+        "Rust",
+        "Clojure",
 
         "AWS",
         "Amazon Sagemaker",
